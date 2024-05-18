@@ -56,11 +56,21 @@ class _DashboardState extends State<Dashboard> {
         height: 66,
         child: OutlinedButton(
           style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.pink),
-              shape: MaterialStateProperty.all<OutlinedBorder>(
-                  const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero))),
-          onPressed: () {},
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.pink),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            ),
+          ),
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                    "Something went wrong, server responded with an error code-508"),
+              ),
+            );
+            throw Exception(
+                "Something went wrong, server responded with an error code-508");
+          },
           child: const Text(
             "BUY NOW",
             style: TextStyle(
