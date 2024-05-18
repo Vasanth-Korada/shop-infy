@@ -77,18 +77,20 @@ Widget simulationOption(
     child: DecoratedBox(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(16)),
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.pinkAccent,
-          ],
-        ),
+        color: Colors.grey,
       ),
       child: InkWell(
         onTap: onTap,
         child: Center(
-          child: Expanded(child: Text(title)),
+          child: Expanded(
+              child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          )),
         ),
       ),
     ),
